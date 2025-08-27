@@ -8857,7 +8857,6 @@ p.slider-teaser{
   background: -webkit-linear-gradient(0deg,rgba(var(--bg-dark-1-rgb), .75) 0%, rgba(var(--bg-dark-1-rgb), .75) 50%);
   background: -moz-linear-gradient(0deg,rgba(var(--bg-dark-1-rgb), .75) 0%, rgba(var(--bg-dark-1-rgb), .75) 50%);
   background: linear-gradient(0deg,rgba(var(--bg-dark-1-rgb), .75) 0%, rgba(var(--bg-dark-1-rgb), .75) 50%);
-  z-index: 2;
 }
 
 .swiper-inner{

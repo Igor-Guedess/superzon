@@ -549,7 +549,14 @@
             dots: false,
             margin:40,
             autoplay:true,
-            autoplayTimeout:2000,
+            autoplayTimeout:3000,
+
+            mouseDrag: false,
+            touchDrag: false,
+            slideTransition: 'linear',
+            autoplaySpeed: 3000,
+            smartSpeed: 3000,
+
             responsive:{
                 1000:{
                     items:5
