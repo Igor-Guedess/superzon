@@ -1,0 +1,132 @@
+.relactedproducts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+.producticon {
+    display: flex;
+    flex-direction: column;
+    width: 244.5px;
+    height: 381px;
+    padding: 11px 0;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 1px solid #FFF;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    gap: 5px;
+}
+
+.checked {
+    color: #F2B827;
+}
+
+.producttitle {
+    color: #FFF !important;
+    display: block;
+    text-align: center;
+    font-family: Oxanium;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25.5px; /* 150% */
+    margin: 0;
+}
+
+.productprice {
+    color: rgba(255, 255, 255, 0.65);
+    text-align: center;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30.4px; /* 190% */
+}
+
+.promo {
+    position: absolute;
+    z-index: 1;
+    background: var(--primary-color);
+    color:#ffffff;
+    padding: 3px 8px;
+    line-height: 1em;
+    margin: 20px 0 0 20px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.relacteditems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.technicaldata {
+    padding: 40px 0;
+    background: var(--primary-color) !important;
+}
+
+.technicalitems {
+    display: flex;
+    justify-content: space-between;
+}
+
+.technicaltext {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+}
+
+.technicalbutton {
+    display: flex;
+    align-items: center;
+    color: #FFF !important;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    padding: 6px 21px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.technicalbutton:hover {
+    background: #FFF;
+    color: var(--primary-color) !important;
+    border: 1px solid #FFF;
+    cursor: pointer;
+}
+
+.techlist {
+    list-style: none;
+    padding: 0;
+    
+}
+
+.techlist li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+}
+.techlist li span:first-child {
+    color: var(--body-font-color-dark);
+}
+.techlist li span:last-child {
+    font-weight: bold;
+    color: #fff;
+}
