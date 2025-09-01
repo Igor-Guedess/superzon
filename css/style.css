@@ -13581,3 +13581,8 @@ img {
     width: auto;
   }
 }
+
+.sticky {
+  position: sticky;
+  top: 100px;
+}
