@@ -13762,3 +13762,7 @@ img {
 .whatsapp-float:hover {
     transform: scale(1.1); /* Aumenta um pouco o tamanho ao passar o mouse */
 }
+
+.nomb {
+  margin-bottom: 0;
+}

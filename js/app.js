@@ -44,8 +44,6 @@ const addDataToHTML = (filteredProducts = null) => {
                         </a>
                         <div class="atr__extra-menu">
                             <a class="atr__quick-view" href="shop-product-single.html"><i class="icon_zoom-in_alt"></i></a>
-                            <div class="atr__add-cart"${!product.inStock ? ' style="pointer-events:none;opacity:0.5;"' : ''}><i class="icon_cart_alt"></i></div>
-                            <div class="atr__wish-list"${!product.inStock ? ' style="pointer-events:none;opacity:0.5;"' : ''}><i class="icon_heart_alt"></i></div>
                         </div>
                     </div>
                     <h3>${product.name}</h3>
