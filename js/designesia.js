@@ -1711,27 +1711,23 @@
             });
             // owl sync end
 
-        $('.accordion-section-title').on("click", function(e) {
-         var currentAttrvalue = $(this).data('tab');
-         if($(e.target).is('.active')){
-             $(this).removeClass('active');
-             $('.accordion-section-content:visible').slideUp(300);
-         } else {
-             $('.accordion-section-title').removeClass('active').filter(this).addClass('active');
-             $('.accordion-section-content').slideUp(300).filter(currentAttrvalue).slideDown(300);
-         }
-        });
-        // cart button & popup end
-    
-        $('.accordion-section-title').on("click", function(e) {
-         var currentAttrvalue = $(this).data('tab');
-         if($(e.target).is('.active')){
-             $(this).removeClass('active');
-             $('.accordion-section-content:visible').slideUp(300);
-         } else {
-             $('.accordion-section-title').removeClass('active').filter(this).addClass('active');
-             $('.accordion-section-content').slideUp(300).filter(currentAttrvalue).slideDown(300);
-         }
+        $('.accordion-section-title').off('click');
+
+        $('.accordion-section-title').on('click', function (e) {
+            e.preventDefault();
+            var currentAttrValue = $(this).attr('data-tab');
+
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $('.accordion ' + currentAttrValue).slideUp(300).removeClass('open');
+            } else {
+                
+                $('.accordion .accordion-section-title').removeClass('active');
+                $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+
+                $(this).addClass('active');
+                $('.accordion ' + currentAttrValue).slideDown(300).addClass('open');
+            }
         });
 
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
