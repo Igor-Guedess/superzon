@@ -36,7 +36,7 @@ const addDataToHTML = (filteredProducts = null) => {
                             ${
                                 !product.inStock
                                     ? `<div class="atr__promo bg-danger text-white">Esgotado</div>`
-                                    : (product.inPromo ? `<div class="atr__promo">Desconto</div>` : ``)
+                                    : (product.inPromo ? `<div class="atr__promo">Limitado</div>` : ``)
                             }
                         <a href="shop-product-single.html">
                             <img class="atr__image-main" src="${product.images[0]}">
