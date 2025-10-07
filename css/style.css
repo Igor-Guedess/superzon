@@ -13770,3 +13770,17 @@ img {
 .mbed {
   margin-bottom: 38px;
 }
+
+.pdnt {
+  padding: 0 !important;
+}
+
+.reff {
+  border-radius: 12px;
+  width: 100%;
+  transition: border 0.2s ease-in-out;
+}
+
+.reff:hover {
+  border: 4px solid var(--primary-color);
+}

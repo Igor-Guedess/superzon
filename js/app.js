@@ -38,18 +38,18 @@ const addDataToHTML = (filteredProducts = null) => {
                                     ? `<div class="atr__promo bg-danger text-white">Esgotado</div>`
                                     : (product.inPromo ? `<div class="atr__promo">Limitado</div>` : ``)
                             }
-                        <a href="shop-product-single.html">
+                        <a href="${product.src}">
                             <img class="atr__image-main" src="${product.images[0]}">
                             ${product.colorOptions && product.images.length > 1 ? `<img class="atr__image-hover" src="${product.images[product.images.length - 1]}">` : ''}
                         </a>
                         <div class="atr__extra-menu">
-                            <a class="atr__quick-view" href="shop-product-single.html"><i class="icon_zoom-in_alt"></i></a>
+                            <a class="atr__quick-view" href="${product.src}"><i class="icon_zoom-in_alt"></i></a>
                         </div>
                     </div>
                     <h3>${product.name}</h3>
                     <div class="atr__colors">${colorButtons}</div>
                     <a class="btn-main fx-slide wow fadeInUp${!product.inStock ? ' disabled' : ''}" 
-                    href="shop-product-single.html"
+                    href="${product.src}"
                     ${!product.inStock ? 'style="pointer-events:none;opacity:0.5;background:#ccc;border-color:#ccc;color:#fff;" tabindex="-1"' : ''}><span>Comprar Agora</span></a>
                 </div>
             `;
@@ -115,3 +115,22 @@ const initApp = () => {
 }
 
 initApp();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const refilImage = document.querySelector('.reff');
+    const refilCheckbox = document.querySelector('#cat_6');
+
+    if (refilImage && refilCheckbox) {
+        refilImage.addEventListener('click', function() {
+            // Alterna o estado do checkbox (marcado/desmarcado)
+            refilCheckbox.checked = !refilCheckbox.checked;
+
+            // Cria e dispara um evento 'change' para acionar o filtro
+            const changeEvent = new Event('change', {
+                'bubbles': true,
+                'cancelable': true
+            });
+            refilCheckbox.dispatchEvent(changeEvent);
+        });
+    }
+});

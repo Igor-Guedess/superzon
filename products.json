@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Everest Plus",
-        "price": "",
+        "src": "p_everest-plus.html",
         "images": [
             "images/shop/products/everest-plus-01a.png",
             "images/shop/products/everest-plus-01b.png",
@@ -11,13 +11,13 @@
         "colorOptions": true,
         "colors": ["#ffffff", "#787B85", "#1D1D1D", "#CB151D"],
         "categories": ["purifier_everest", "water_cold"],
-        "inPromo": true,
+        "inPromo": false,
         "inStock": true
     },
     {
         "id": 2,
         "name": "Everest Star",
-        "price": "",
+        "src": "p_everest-star.html",
         "images": [
             "images/shop/products/everest-star-01a.png",
             "images/shop/products/everest-star-01b.png",
@@ -26,13 +26,13 @@
         "colorOptions": true,
         "colors": ["#ffffff", "#787B85", "#1D1D1D", "#CB151D"],
         "categories": ["purifier_everest", "water_cold"],
-        "inPromo": true,
+        "inPromo": false,
         "inStock": true
     },
     {
         "id": 3,
         "name": "Everest Slim",
-        "price": "",
+        "src": "p_everest-slim.html",
         "images": [
             "images/shop/products/everest-slim-01a.png",
             "images/shop/products/everest-slim-01b.png",
@@ -47,7 +47,7 @@
     {
         "id": 4,
         "name": "Everest Fit",
-        "price": "",
+        "src": "p_everest-fit.html",
         "images": [
             "images/shop/products/everest-fit-01a.png",
             "images/shop/products/everest-fit-01b.png",
@@ -62,7 +62,7 @@
     {
         "id": 5,
         "name": "Everest Baby",
-        "price": "",
+        "src": "p_everest-baby.html",
         "images": [
             "images/shop/products/everest-baby-01a.png",
             "images/shop/products/everest-baby-01b.png",
@@ -76,7 +76,7 @@
     {
         "id": 6,
         "name": "Elemento Filtrante Superzon Digital Premium",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-digital-premium.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -86,7 +86,7 @@
     {
         "id": 7,
         "name": "Elemento Filtrante Superzon Atlantis",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-atlantis.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -96,7 +96,7 @@
     {
         "id": 8,
         "name": "Elemento Filtrante Superzon FR 600",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-fr600.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -106,7 +106,7 @@
     {
         "id": 9,
         "name": "Elemento Filtrante Superzon FRQ 600",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-frq600.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -116,7 +116,7 @@
     {
         "id": 10,
         "name": "Elemento Filtrante Superzon Classic",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-classic.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -126,7 +126,7 @@
     {
         "id": 11,
         "name": "Elemento Filtrante Superzon Consul",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-consul.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -136,7 +136,7 @@
     {
         "id": 12,
         "name": "Elemento Filtrante Superzon Prime",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-prime.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -146,7 +146,7 @@
     {
         "id": 14,
         "name": "Elemento Filtrante Superzon Avanti",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-avanti.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -156,7 +156,7 @@
     {
         "id": 15,
         "name": "Elemento Filtrante Superzon Elite",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-elite.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -166,7 +166,7 @@
     {
         "id": 16,
         "name": "Elemento Filtrante Superzon Luxo",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-luxo.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -176,7 +176,7 @@
     {
         "id": 17,
         "name": "Elemento Filtrante Superzon Milenium",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-milenium.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -186,7 +186,7 @@
     {
         "id": 18,
         "name": "Elemento Filtrante Superzon Master",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-master.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -196,7 +196,7 @@
     {
         "id": 19,
         "name": "Elemento Filtrante Superzon Quality",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-quality.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -206,7 +206,7 @@
     {
         "id": 20,
         "name": "Elemento Filtrante Superzon Consul Facilite",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-consul-facilite.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -216,7 +216,7 @@
     {
         "id": 21,
         "name": "Elemento Filtrante Ecolife",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/zoom-elemento-filtrante-ecolife.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -226,7 +226,7 @@
     {
         "id": 22,
         "name": "Refil Elemento Filtrante Evolux, Expert e Exclusive CZ+7",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/refil-elemento.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -236,7 +236,7 @@
     {
         "id": 23,
         "name": "Refil Everest",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/refil-everest.png"],
         "colorOptions": false,
         "categories": ["refil"],
@@ -246,9 +246,13 @@
     {
         "id": 24,
         "name": "Purificador de Água Gelada, Alcalina, Ionizada com Ozônio",
-        "price": "",
-        "images": ["images/shop/products/purificador-gelada.png"],
-        "colorOptions": false,
+        "src": "p_purificador-gelada.html",
+        "images": [
+            "images/shop/products/purificador-gelada1.png",
+            "images/shop/products/purificador-gelada2.png",
+            "images/shop/products/purificador-gelada3.png"],
+        "colorOptions": true,
+        "colors": ["#ffffff", "#1D1D1D", "#CB151D"],
         "categories": ["water_cold", "water_alcaline", "water_ozonizer"],
         "inPromo": false,
         "inStock": true
@@ -256,9 +260,13 @@
     {
         "id": 25,
         "name": "Purificador de Água Natural, Alcalina, Ionizada com Ozônio",
-        "price": "",
-        "images": ["images/shop/products/purificador-natural.png"],
-        "colorOptions": false,
+        "src": "p_purificador-natural.html",
+        "images": [
+            "images/shop/products/purificador-natural1.png",
+            "images/shop/products/purificador-natural2.png",
+            "images/shop/products/purificador-natural3.png"],
+        "colorOptions": true,
+        "colors": ["#ffffff", "#1D1D1D", "#CB151D"],
         "categories": ["water_natural", "water_alcaline", "water_ozonizer"],
         "inPromo": false,
         "inStock": true
@@ -266,7 +274,7 @@
     {
         "id": 26,
         "name": "Purificador e Ozonizador de Água Superzon Prime Água Alcalina",
-        "price": "",
+        "src": "p_purificador-superzon-prime.html",
         "images": ["images/shop/products/purificador-superzon-prime.png"],
         "colorOptions": false,
         "categories": ["water_natural", "water_alcaline", "water_ozonizer"],
@@ -276,7 +284,7 @@
     {
         "id": 27,
         "name": "Refil Alcalino",
-        "price": "",
+        "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/refil-alcalino.png"],
         "colorOptions": false,
         "categories": ["refil"],
