@@ -79,7 +79,13 @@
                                             <li><a href="testimonials.html">Feedbacks</a></li>
                                         </ul>
                                     </li>
-                                    <li><a class="menu-item" href="shop.html">Loja</a></li>
+                                    <li><a class="menu-item" href="#">Loja</a>
+                                        <ul>
+                                            <li><a href="refis.html">Refis</a></li>
+                                            <li><a href="purificadores.html">Purificadores</a></li>
+                                            <li><a href="bebedouros.html">Bebedouros</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a class="menu-item" href="gallery.html">Galeria</a></li>
                                     <li><a class="menu-item" href="contact.html">Contato</a>
                                 </ul>
@@ -150,35 +156,20 @@
                         <div class="col-lg-6">
                             <div class="p-40 bg-dark-2 text-light rounded-1">
                                 <h3>Entre em Contato</h3>
-                                <form name="contactForm" id="contact_form" class="relative z1000" method="post" action="contact.php">
+                                <form name="contactForm" id="contact_form" class="relative z1000">
 
-                                    <div class="field-set">
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Seu Nome" required>
-                                    </div>
+                                <div class="field-set">
+                                    <input type="text" name="name" id="name" class="form-control" placeholder="Seu Nome" required>
+                                </div>
 
-                                    <div class="field-set">
-                                        <input type="text" name="email" id="email" class="form-control" placeholder="Seu Email" required>
-                                    </div>
+                                <div class="field-set mb20">
+                                    <textarea name="message" id="message" class="form-control" placeholder="Sua Mensagem" required></textarea>
+                                </div>
 
-                                    <div class="field-set">
-                                        <input type="text" name="phone" id="phone" class="form-control" placeholder="Seu Telefone" required>
-                                    </div>
-
-                                    <div class="field-set mb20">
-                                        <textarea name="message" id="message" class="form-control" placeholder="Sua Mensagem" required></textarea>
-                                    </div>
-
-
-                                    <div id='submit' class="mt20">
-                                        <input type='submit' id='send_message' value='Enviar Mensagem' class="btn-main">
-                                    </div>
-
-                                    <div id="success_message" class='success'>
-                                        Sua mensagem foi enviada com sucesso. Atualize esta página se quiser enviar mais mensagens.
-                                    </div>
-                                    <div id="error_message" class='error'>
-                                        Desculpe, ocorreu um erro ao enviar sua mensagem.
-                                    </div>
+                                <div id='submit' class="mt20">
+                                    <button type="submit" id='send_whatsapp_message' class="btn-main">Enviar via WhatsApp</button>
+                                </div>
+                                
                                 </form>
                             </div>
                         </div>
@@ -246,6 +237,23 @@
     <script src="js/validation-contact.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/scripts.js"></script>
+
+    <script>
+        document.getElementById('contact_form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            
+            const phoneNumber = '557132546100';
+
+            const whatsappMessage = `Olá, eu me chamo ${name}!\n\n${message}`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
 
 </body>
 

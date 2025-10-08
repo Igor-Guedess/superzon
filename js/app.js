@@ -116,21 +116,21 @@ const initApp = () => {
 
 initApp();
 
-document.addEventListener('DOMContentLoaded', function() {
-    const refilImage = document.querySelector('.reff');
-    const refilCheckbox = document.querySelector('#cat_6');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const refilImage = document.querySelector('.reff');
+//     const refilCheckbox = document.querySelector('#cat_6');
 
-    if (refilImage && refilCheckbox) {
-        refilImage.addEventListener('click', function() {
-            // Alterna o estado do checkbox (marcado/desmarcado)
-            refilCheckbox.checked = !refilCheckbox.checked;
+//     if (refilImage && refilCheckbox) {
+//         refilImage.addEventListener('click', function() {
+//             // Alterna o estado do checkbox (marcado/desmarcado)
+//             refilCheckbox.checked = !refilCheckbox.checked;
 
-            // Cria e dispara um evento 'change' para acionar o filtro
-            const changeEvent = new Event('change', {
-                'bubbles': true,
-                'cancelable': true
-            });
-            refilCheckbox.dispatchEvent(changeEvent);
-        });
-    }
-});
+//             // Cria e dispara um evento 'change' para acionar o filtro
+//             const changeEvent = new Event('change', {
+//                 'bubbles': true,
+//                 'cancelable': true
+//             });
+//             refilCheckbox.dispatchEvent(changeEvent);
+//         });
+//     }
+// });

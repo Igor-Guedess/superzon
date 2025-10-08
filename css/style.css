@@ -13784,3 +13784,9 @@ img {
 .reff:hover {
   border: 4px solid var(--primary-color);
 }
+
+.product-image-box {
+  padding: 40px;
+  border-radius: 8px;
+  background: var(--bg-dark-2);
+}

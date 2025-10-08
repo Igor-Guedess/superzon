@@ -245,6 +245,16 @@
     },
     {
         "id": 24,
+        "name": "Purificador e Ozonizador de Água Superzon Prime Água Alcalina",
+        "src": "p_purificador-superzon-prime.html",
+        "images": ["images/shop/products/purificador-superzon-prime.png"],
+        "colorOptions": false,
+        "categories": ["water_natural", "water_alcaline", "water_ozonizer"],
+        "inPromo": false,
+        "inStock": true
+    },
+    {
+        "id": 25,
         "name": "Purificador de Água Gelada, Alcalina, Ionizada com Ozônio",
         "src": "p_purificador-gelada.html",
         "images": [
@@ -258,7 +268,7 @@
         "inStock": true
     },
     {
-        "id": 25,
+        "id": 26,
         "name": "Purificador de Água Natural, Alcalina, Ionizada com Ozônio",
         "src": "p_purificador-natural.html",
         "images": [
@@ -272,22 +282,51 @@
         "inStock": true
     },
     {
-        "id": 26,
-        "name": "Purificador e Ozonizador de Água Superzon Prime Água Alcalina",
-        "src": "p_purificador-superzon-prime.html",
-        "images": ["images/shop/products/purificador-superzon-prime.png"],
-        "colorOptions": false,
-        "categories": ["water_natural", "water_alcaline", "water_ozonizer"],
-        "inPromo": false,
-        "inStock": true
-    },
-    {
         "id": 27,
         "name": "Refil Alcalino",
         "src": "https://wa.me/557132546100",
         "images": ["images/shop/products/refil-alcalino.png"],
         "colorOptions": false,
         "categories": ["refil"],
+        "inPromo": false,
+        "inStock": true
+    },
+    {
+        "id": 28,
+        "name": "Bebedouro de Água Industrial 25 litros",
+        "src": "p_bebedouro-25l.html",
+        "images": [
+            "images/shop/products/bebedouro25-1.png",
+            "images/shop/products/bebedouro25-2.png",
+            "images/shop/products/bebedouro25-3.png"],
+        "colorOptions": false,
+        "categories": ["bebedouro"],
+        "inPromo": false,
+        "inStock": true
+    },
+    {
+        "id": 29,
+        "name": "Bebedouro de Água Industrial 50 litros",
+        "src": "p_bebedouro-50l.html",
+        "images": [
+            "images/shop/products/bebedouro50-1.png",
+            "images/shop/products/bebedouro50-2.png",
+            "images/shop/products/bebedouro50-3.png"],
+        "colorOptions": false,
+        "categories": ["bebedouro"],
+        "inPromo": false,
+        "inStock": true
+    },
+    {
+        "id": 30,
+        "name": "Bebedouro de Água Industrial 100 litros",
+        "src": "p_bebedouro-100l.html",
+        "images": [
+            "images/shop/products/bebedouro100-1.png",
+            "images/shop/products/bebedouro100-2.png",
+            "images/shop/products/bebedouro100-3.png"],
+        "colorOptions": false,
+        "categories": ["bebedouro"],
         "inPromo": false,
         "inStock": true
     }
