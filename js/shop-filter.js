@@ -49,18 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
                                             ? `<div class="atr__promo bg-danger text-white">Esgotado</div>`
                                             : (product.inPromo ? `<div class="atr__promo">Limitado</div>` : ``)
                                     }
-                                <a href="${product.src}">
+                                <a href="${product.src}" target="_blank">
                                     <img class="atr__image-main" src="${product.images[0]}">
                                     ${product.colorOptions && product.images.length > 1 ? `<img class="atr__image-hover" src="${product.images[product.images.length - 1]}">` : ''}
                                 </a>
                                 <div class="atr__extra-menu">
-                                    <a class="atr__quick-view" href="${product.src}"><i class="icon_zoom-in_alt"></i></a>
+                                    <a class="atr__quick-view" href="${product.src}" target="_blank"><i class="icon_zoom-in_alt"></i></a>
                                 </div>
                             </div>
                             <h3>${product.name}</h3>
                             <div class="atr__colors">${colorButtons}</div>
                             <a class="btn-main fx-slide wow fadeInUp${!product.inStock ? ' disabled' : ''}" 
-                            href="${product.src}"
+                            href="${product.src}" target="_blank"
                             ${!product.inStock ? 'style="pointer-events:none;opacity:0.5;background:#ccc;border-color:#ccc;color:#fff;" tabindex="-1"' : ''}><span>Comprar Agora</span></a>
                         </div>
                     `;
@@ -101,8 +101,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.querySelectorAll('.item_filter_group input[type="checkbox"]').forEach(cb => {
-        cb.addEventListener('change', applyFilters);
+    const categoryCheckboxes = document.querySelectorAll('.item_filter_group input[type="checkbox"]');
+
+    categoryCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                categoryCheckboxes.forEach(otherCheckbox => {
+                    if (otherCheckbox !== this) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+            applyFilters();
+        });
     });
 
     if (listProductHTML) {
@@ -126,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 listProducts = data;
-                applyFilters(); // Aplica o filtro inicial ao carregar
+                applyFilters();
             });
     }
 
