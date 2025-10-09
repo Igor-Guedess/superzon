@@ -13845,6 +13845,6 @@ img {
   background: var(--bg-dark-2);
 }
 
-@media screen {
-  
+.mheg {
+  min-height: 120px;
 }
