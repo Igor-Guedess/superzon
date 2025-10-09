@@ -1,136 +1,26 @@
-let listProductHTML = document.querySelector('.list-product');
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona o botão "Comprar Agora" pelo seu ID
+    const purchaseButton = document.getElementById('purchase');
 
-let listProducts = [];
+    if (purchaseButton) {
+        purchaseButton.addEventListener('click', function(event) {
+            // Previne o comportamento padrão do link (que é ir para #)
+            event.preventDefault();
 
-function getSelectedCategories() {
-    return Array.from(document.querySelectorAll('.item_filter_group input[type="checkbox"]:checked'))
-        .map(cb => cb.value);
-}
+            // --- Coleta as informações do produto da página ---
 
-const addDataToHTML = (filteredProducts = null) => {
-    const productsToShow = filteredProducts || listProducts;
-    const sortedProducts = [...productsToShow].sort((a, b) => {
-        return (a.inStock === b.inStock) ? 0 : a.inStock ? -1 : 1;
-    });
+            // Pega o nome do produto do elemento <h2>
+            const productName = document.querySelector('.col-md-6 h2').textContent.trim();
 
-    listProductHTML.innerHTML = '';
-    if (sortedProducts.length > 0) {
-        sortedProducts.forEach(product => {
-            let colorButtons = '';
-            if (product.colorOptions && product.colors && product.images) {
-                product.colors.forEach((color, idx) => {
-                    colorButtons += `
-                        <div class="atr__color${idx === 0 ? ' active' : ''}" 
-                             data-image="${product.images[idx] || product.images[0]}" 
-                             data-bgcolor="${color}">
-                            <span style="background:${color}"></span>
-                        </div>
-                    `;
-                });
-            }
-            let newProduct = document.createElement('div');
-            newProduct.classList.add('col-xl-3', 'col-lg-4', 'col-md-6');
-            newProduct.innerHTML = `
-                <div class="de__pcard text-center${!product.inStock ? ' out-of-stock' : ''}">
-                        <div class="atr__images">
-                            ${
-                                !product.inStock
-                                    ? `<div class="atr__promo bg-danger text-white">Esgotado</div>`
-                                    : (product.inPromo ? `<div class="atr__promo">Limitado</div>` : ``)
-                            }
-                        <a href="${product.src}">
-                            <img class="atr__image-main" src="${product.images[0]}">
-                            ${product.colorOptions && product.images.length > 1 ? `<img class="atr__image-hover" src="${product.images[product.images.length - 1]}">` : ''}
-                        </a>
-                        <div class="atr__extra-menu">
-                            <a class="atr__quick-view" href="${product.src}"><i class="icon_zoom-in_alt"></i></a>
-                        </div>
-                    </div>
-                    <h3>${product.name}</h3>
-                    <div class="atr__colors">${colorButtons}</div>
-                    <a class="btn-main fx-slide wow fadeInUp${!product.inStock ? ' disabled' : ''}" 
-                    href="${product.src}"
-                    ${!product.inStock ? 'style="pointer-events:none;opacity:0.5;background:#ccc;border-color:#ccc;color:#fff;" tabindex="-1"' : ''}><span>Comprar Agora</span></a>
-                </div>
-            `;
-            listProductHTML.appendChild(newProduct);
+            const yourWhatsAppNumber = '557182822102'; 
+
+            let message = `Olá! Gostaria de adquirir o produto: \n\n${productName}.`;
+
+            const encodedMessage = encodeURIComponent(message);
+
+            const whatsappURL = `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappURL, '_blank');
         });
     }
-
-    $('.fx-slide').each(function() {
-        var text = jQuery(this).text();
-        jQuery(this).attr('data-hover',text);
-    });
-}
-
-document.querySelectorAll('.item_filter_group input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', () => {
-        const selected = getSelectedCategories();
-        if (selected.length === 0) {
-            addDataToHTML(); // mostra todos
-        } else {
-            const filtered = listProducts.filter(prod =>
-                prod.categories && selected.every(cat => prod.categories.includes(cat))
-            );
-            addDataToHTML(filtered);
-        }
-    });
 });
-
-listProductHTML.addEventListener('click', function(event) {
-    // Add to cart
-    if (event.target.closest('.atr__add-cart')) {
-        // Lógica de carrinho
-        alert('Produto adicionado ao carrinho!');
-    }
-    // Wishlist
-    if (event.target.closest('.atr__wish-list')) {
-        alert('Produto adicionado à wishlist!');
-    }
-    // Troca de cor
-    const colorBtn = event.target.closest('.atr__colors > div');
-    if (colorBtn) {
-        // Remove 'active' de todos os irmãos
-        colorBtn.parentElement.querySelectorAll('div').forEach(div => div.classList.remove('active'));
-        colorBtn.classList.add('active');
-        // Troca a imagem principal
-        const imageUrl = colorBtn.getAttribute('data-image');
-        const card = colorBtn.closest('.de__pcard');
-        if (card) {
-            const img = card.querySelector('.atr__image-main');
-            if (img && imageUrl) img.src = imageUrl;
-        }
-    }
-});
-
-
-const initApp = () => {
-    //get data from json
-    fetch('products.json')
-        .then(response => response.json())
-        .then(data => {
-            listProducts = data;
-            addDataToHTML();
-        })
-}
-
-initApp();
-
-// document.addEventListener('DOMContentLoaded', function() {
-//     const refilImage = document.querySelector('.reff');
-//     const refilCheckbox = document.querySelector('#cat_6');
-
-//     if (refilImage && refilCheckbox) {
-//         refilImage.addEventListener('click', function() {
-//             // Alterna o estado do checkbox (marcado/desmarcado)
-//             refilCheckbox.checked = !refilCheckbox.checked;
-
-//             // Cria e dispara um evento 'change' para acionar o filtro
-//             const changeEvent = new Event('change', {
-//                 'bubbles': true,
-//                 'cancelable': true
-//             });
-//             refilCheckbox.dispatchEvent(changeEvent);
-//         });
-//     }
-// });

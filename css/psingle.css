@@ -68,7 +68,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     gap: 30px;
 }
 
@@ -128,4 +127,10 @@
 .techlist li span:last-child {
     font-weight: bold;
     color: #fff;
+}
+
+@media (max-width: 480px) {
+    .techlist li {
+        flex-direction: column;
+    }
 }

@@ -27,13 +27,28 @@ document.addEventListener('DOMContentLoaded', function () {
             listProductHTML.innerHTML = '';
             if (sortedProducts.length > 0) {
                 sortedProducts.forEach(product => {
+                    // MODIFICAÇÃO INICIA AQUI
+                    let finalSrc = product.src; // Usa o src original por padrão
+                    const srcTarget = (product.src.includes('wa.me')) ? ' target="_blank"' : '';
+
+                    // Verifica se o link é para o WhatsApp
+                    if (product.src.includes('wa.me')) {
+                        // Monta a mensagem personalizada
+                        const message = `Olá, eu gostaria de adquirir o produto: \n\n${product.name}`;
+                        // Codifica a mensagem para ser usada em uma URL
+                        const encodedMessage = encodeURIComponent(message);
+                        // Cria o novo link completo
+                        finalSrc = `${product.src}?text=${encodedMessage}`;
+                    }
+                    // FIM DA MODIFICAÇÃO
+
                     let colorButtons = '';
                     if (product.colorOptions && product.colors && product.images) {
                         product.colors.forEach((color, idx) => {
                             colorButtons += `
                                 <div class="atr__color${idx === 0 ? ' active' : ''}" 
-                                     data-image="${product.images[idx] || product.images[0]}" 
-                                     data-bgcolor="${color}">
+                                    data-image="${product.images[idx] || product.images[0]}" 
+                                    data-bgcolor="${color}">
                                     <span style="background:${color}"></span>
                                 </div>
                             `;
@@ -41,26 +56,27 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                     let newProduct = document.createElement('div');
                     newProduct.classList.add('col-xl-3', 'col-lg-4', 'col-md-6');
+                    // Substituímos 'product.src' por 'finalSrc' nos links abaixo
                     newProduct.innerHTML = `
                         <div class="de__pcard text-center${!product.inStock ? ' out-of-stock' : ''}">
-                                <div class="atr__images">
-                                    ${
-                                        !product.inStock
-                                            ? `<div class="atr__promo bg-danger text-white">Esgotado</div>`
-                                            : (product.inPromo ? `<div class="atr__promo">Limitado</div>` : ``)
-                                    }
-                                <a href="${product.src}" target="_blank">
+                            <div class="atr__images">
+                                ${
+                                    !product.inStock
+                                        ? `<div class="atr__promo bg-danger text-white">Esgotado</div>`
+                                        : (product.inPromo ? `<div class="atr__promo">Limitado</div>` : ``)
+                                }
+                                <a href="${finalSrc}"${srcTarget}>
                                     <img class="atr__image-main" src="${product.images[0]}">
                                     ${product.colorOptions && product.images.length > 1 ? `<img class="atr__image-hover" src="${product.images[product.images.length - 1]}">` : ''}
                                 </a>
                                 <div class="atr__extra-menu">
-                                    <a class="atr__quick-view" href="${product.src}" target="_blank"><i class="icon_zoom-in_alt"></i></a>
+                                    <a class="atr__quick-view" href="${finalSrc}"${srcTarget}><i class="icon_zoom-in_alt"></i></a>
                                 </div>
                             </div>
                             <h3>${product.name}</h3>
                             <div class="atr__colors">${colorButtons}</div>
                             <a class="btn-main fx-slide wow fadeInUp${!product.inStock ? ' disabled' : ''}" 
-                            href="${product.src}" target="_blank"
+                            href="${finalSrc}"${srcTarget}
                             ${!product.inStock ? 'style="pointer-events:none;opacity:0.5;background:#ccc;border-color:#ccc;color:#fff;" tabindex="-1"' : ''}><span>Comprar Agora</span></a>
                         </div>
                     `;
@@ -68,12 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         }
-
-
-        $('.fx-slide').each(function() {
-            var text = jQuery(this).text();
-            jQuery(this).attr('data-hover',text);
-        });
     }
 
     function applyFilters() {
