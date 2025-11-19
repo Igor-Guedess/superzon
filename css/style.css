@@ -13782,6 +13782,10 @@ img {
   .calc-item {
     flex-basis: 90%;
   }
+
+  .fsmob {
+    font-size: 34px;
+  }
 }
 
 .pl-20 {
